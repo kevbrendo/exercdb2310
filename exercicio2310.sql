@@ -58,11 +58,11 @@ BEGIN
     DECLARE p_EmailBase VARCHAR(255);
     DECLARE p_Email VARCHAR(255);
     DECLARE i INT;
-    
+
     SET p_Nome = SUBSTRING_INDEX(p_NomeCompleto, ' ', 1); -- Pega o primeiro nome
     SET p_Sobrenome = SUBSTRING(p_NomeCompleto, LENGTH(p_Nome) + 2); -- Pega o sobrenome a partir do espaço
-    
-    SET p_EmailBase = CONCAT(LOWER(REPLACE(p_Nome, ' ', '.')), '.', LOWER(REPLACE(p_Sobrenome, ' ', '.'));
+
+    SET p_EmailBase = CONCAT(LOWER(REPLACE(p_Nome, ' ', '.')), '.', LOWER(REPLACE(p_Sobrenome, ' ', '.')));
 
     -- Inicializa um contador para gerar e-mails únicos
     SET i = 0;
